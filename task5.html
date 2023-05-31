@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Форма для відправлення адреси електронної пошти</title>
+  <script>
+    function openEmailWindow() {
+      var emailAddress = prompt("Будь ласка, введіть електронну адресу одержувача:", "");
+      if (emailAddress) {
+        var form = document.getElementById("emailForm");
+        form.action = "mailto:" + emailAddress;
+        form.submit();
+      }
+    }
+  </script>
+</head>
+<body>
+  <a href="index.html">Назад</a>
+  <h1>Форма для відправлення адреси електронної пошти</h1>
+  <form id="emailForm" method="POST" enctype="text/plain">
+    <label for="name">Ім'я:</label>
+    <input type="text" id="name" name="name" size="50" required><br>
+
+    <label for="subject">Тема:</label>
+    <input type="text" id="subject" name="subject" size="50" required><br>
+
+    <label for="message">Повідомлення:</label><br>
+    <textarea id="message" name="message" rows="10" cols="50" required></textarea><br>
+
+    <input type="button" value="Відправити" onclick="openEmailWindow()">
+    <input type="reset" value="Скасувати">
+  </form>
+</body>
+</html>

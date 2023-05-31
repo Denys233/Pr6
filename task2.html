@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тестування</title>
+  <style>
+    .button-row {
+      display: flex;
+    }
+    .button-row button {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html">Назад</a>
+  <a href="task3.html">Далі-></a>
+  <h1>Тест</h1>
+  <form>
+    <p>Хто сказав цвірінь-цвірінь?</p>
+    <div class="button-row">
+      <button type="button" onclick="checkAnswer('option1')">Пташка</button>
+      <button type="button" onclick="checkAnswer('option2')">Кіт</button>
+      <button type="button" onclick="checkAnswer('option3')">Собака</button>
+    </div>
+  </form>
+
+  <p id="resultMessage"></p>
+
+  <script>
+    function checkAnswer(selectedOption) {
+      var resultMessage = document.getElementById("resultMessage");
+
+      if (selectedOption === "option1") {
+        resultMessage.innerText = "Вірно! Пташка сказала цвірінь-цвірінь.";
+      } else {
+        resultMessage.innerText = "Неправильна відповідь. Спробуйте ще раз.";
+      }
+    }
+  </script>
+</body>
+</html>
